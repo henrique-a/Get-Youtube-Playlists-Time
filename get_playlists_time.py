@@ -24,9 +24,10 @@ def main():
 	soup = BeautifulSoup(plain_text, 'html.parser')
 	for texto in soup.findAll('div', {'class' : 'timestamp'}):			
 		for content in texto.contents:						
-			time += converte_time(content.string)
-	print("time total: " + formata_time(time))
-	input("Press <Enter> to continue...")		
+			time += convert_time(content.string)
+	print("time total: " + format_time(time))
+	input("Press <Enter> to continue...")
+	main()		
 
 if __name__ == '__main__':
 	main()
